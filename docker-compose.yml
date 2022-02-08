@@ -1,0 +1,24 @@
+version: "3.1"
+services:
+  php:
+    image: daniels/php:7.4-localdev
+    container_name: "localdev_php"
+    volumes:
+      - "./html:/var/www/html"
+      - "./settings.local.php:/var/www/html/web/sites/default/settings.local.php"
+    restart: always
+    depends_on:
+      - mariadb
+    ports:
+      - 81:80
+      - 444:443
+  mariadb:
+      image: mariadb:10.4.19
+      container_name: "localdev_db"
+      environment:
+        MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
+        MARIADB_ROOT_HOST: localhost
+        MARIADB_USER: drupal
+        MARIADB_PASSWORD: drupal
+        MARIADB_DATABASE: drupal
+      restart: always
