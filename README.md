@@ -31,3 +31,4 @@ docker-compose stop
 1. Certificates and SSL?
 2. Cleanup image creation
 3. Sync code scripts
+4. Get rid of /web in the URL
