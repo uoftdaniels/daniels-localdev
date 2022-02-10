@@ -67,4 +67,7 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-av
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/
+RUN composer global require drush/drush:^10.6 ; \
+    ln -s /root/.composer/vendor/bin/drush /usr/local/bin/drush
+
 WORKDIR /var/www/html
