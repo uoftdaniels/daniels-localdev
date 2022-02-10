@@ -22,7 +22,7 @@
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '0xowrNvUuSxzcRDzadvrHXOju8RH1-Gb6YOqMk4ccEWWktxz4sevoVb4XKW802A1exCM60SwBQ';
+$settings['hash_salt'] = 'localdevhashsalt';
 
 
 $databases['default']['default'] = [
