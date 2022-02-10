@@ -10,8 +10,8 @@ services:
     depends_on:
       - mariadb
     ports:
-      - 81:80
-      - 444:443
+      - 8080:80
+      - 8443:443
   mariadb:
       image: mariadb:10.4.19
       container_name: "localdev_db"
